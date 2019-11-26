@@ -76,8 +76,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias titan="sshpass -p Lw74p6jUa ssh s3799264@titan.csit.rmit.edu.au"
+alias confzsh="vim ~/dotfiles/.zshrc"
+alias confi3="vim ~/dotfiles/.config/i3/config"
 
-echo.
 neofetch
 
 # Powerline-Shell
