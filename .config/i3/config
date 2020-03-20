@@ -8,9 +8,11 @@
 set $backg /home/tristan/pics/kurzback.png
 
 # STARTUP
+exec sudo zypper refresh
 exec feh --bg-scale $backg
 #exec compton
-exec --no-startup-id pulseaudio --start
+exec xinput disable 16
+exec --no-startup-id sleep 3 && pulseaudio --start
 exec --no-startup-id polybar example
 exec --no-startup-id sudo zypper ref
 exec screenset
@@ -29,12 +31,12 @@ gaps outer 0
 # looks
 border_radius 10
 for_window [class="^.*"] border pixel 0
+#for_window [class="runelite"] floating enable
 
-# start a terminal
+# program binds
 bindsym $mod+Return exec st
-
-# start google chrome
 bindsym $mod+g exec google-chrome
+bindsym $mod+u exec runelite
 
 # suspend and shutdown
 bindsym $mod+p exec systemctl suspend
@@ -143,7 +145,7 @@ mode "resize" {
 	bindsym h resize shrink width 10 px or 10 ppt
 	bindsym j resize grow height 10 px or 10 ppt
 	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l semicolon resize grow width 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
 	# bindings for arrow keys
 	bindsym Left resize shrink width 1 px or 1 ppt
