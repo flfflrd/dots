@@ -1,62 +1,75 @@
-#            _              
-#    _______| |__  _ __ ___ 
+#            _
+#    _______| |__  _ __ ___
 #   |_  / __| '_ \| '__/ __|
-#  _ / /\__ \ | | | | | (__ 
+#  _ / /\__ \ | | | | | (__
 # (_)___|___/_| |_|_|  \___|
-#                           
+#
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tristan/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+# Set name of the theme to load
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="bira"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
+# You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd-mm-yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folderH
+# CASE_SENSITIVE="true"
+# HYPHEN_INSENSITIVE="true"
+# DISABLE_AUTO_UPDATE="true"
+# DISABLE_UPDATE_PROMPT="true"
+# export UPDATE_ZSH_DAYS=13
+# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_LS_COLORS="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="true"
+# COMPLETION_WAITING_DOTS="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# USER CONFIG
 
-alias screenset="xrandr --output DP-2-2 --auto --pos 0x0 --output eDP-1 --auto --pos 1680x282 && feh --bg-scale ~/pics/kurzback.png"
-alias screen1="xrandr --output DP-1 --auto && xrandr --output DP-1 --left-of eDP-1 "
-alias screendisc="xrandr --output DP-2-2 --off"
-alias titan="sshpass -p Lw74p6jUa ssh s3799264@titan.csit.rmit.edu.au"
-alias relpulse="pulseaudio -k && sleep 1 && pulseaudio --start"
-alias relpoly="pkill -USR1 polybar"
-alias relx="sudo pkill -USR1 X"
-alias relfeh="feh --bg-scale ~/pics/kurzback.png"
-alias confvim="vim ~/dotfiles/.vimrc"
-alias confzsh="vim ~/dotfiles/.zshrc"
-alias confish="vim ~/.config/fish/config.fish"
-alias confi3="vim ~/dotfiles/.config/i3/config"
-alias confcomp="vim ~/dotfiles/.config/compton.conf"
-alias confpoly="vim ~/dotfiles/.config/polybar/config"
-alias confst="vim ~/workspace/builds/lst/config.h"
-alias mounthdd="sudo mount /dev/sdb1 /media"
-alias lolcat="lolcat.ruby2.5"
-alias wifip="ip addr show | grep inet | awk '{print $2}'"
+# clean up home dir
+compinit -d $ZSH
 
-# SHORTS
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zcompdump
+export HISTFILE=$XDG_CACHE_HOME/zsh_history
+
+# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:$HOME/bin:/usr/local/bin
+
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
+
+# For a full list of active aliases, run `alias`.
 alias q="exit"
-alias l="ls -a --group-directories-first"
-alias h="cd ~"
-alias ws="cd ~/workspace/java"
-alias hd="cd /media"
-alias vids="cd /media/vids"
-alias dw="cd ~/Downloads"
+alias dls="cd ~/dls"
+alias dox="cd ~/dox"
+alias pix="cd ~/pix"
+alias uni="cd ~/uni"
 
-export PATH=$PATH:/usr/local/sbin/
-export PATH=$PATH:/home/tristan/.vim/bundle/vim-live-latex-preview/bin
-export PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+alias l="ls -Al --group-directories-first"
+alias locate="sudo find / -type f -iname"
+alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
-neofetch
+alias cozsh="vim ~/dots/.zshrc"
+alias covim="vim ~/dots/.vimrc"
+alias coxin="vim ~/dots/.xinitrc" # lol coxin
+
