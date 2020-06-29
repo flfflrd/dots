@@ -9,7 +9,6 @@ tristan@hermes
 OS: Arch Linux x86_64\
 Host: 20CL009YAU ThinkPad X250\
 Kernel: 5.6.15-arch1-1\
-Uptime: 1 hour, 31 mins\
 Packages: 398 (pacman)\
 Shell: zsh 5.8\
 Resolution: 1366x768\
@@ -20,7 +19,7 @@ Terminal: st\
 Terminal Font: Fira Code\
 CPU: Intel i5-5200U (4) @ 2.700GHz\
 GPU: Intel HD Graphics 5500\
-Memory: 2171MiB / 7662MiB\
+Memory: 7662MiB
 
 ### todo
 

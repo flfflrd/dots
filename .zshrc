@@ -54,6 +54,7 @@ export HISTFILE=$XDG_CACHE_HOME/zsh_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/bin:/usr/local/bin
+export PATH=$PATH:$XDG_DATA_HOME/dwmblocks
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -65,6 +66,8 @@ alias dox="cd ~/dox"
 alias pix="cd ~/pix"
 alias uni="cd ~/uni"
 
+alias gs="git status"
+
 alias l="ls -Al --group-directories-first"
 alias locate="sudo find / -type f -iname"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
@@ -72,4 +75,3 @@ alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias cozsh="vim ~/dots/.zshrc"
 alias covim="vim ~/dots/.vimrc"
 alias coxin="vim ~/dots/.xinitrc" # lol coxin
-

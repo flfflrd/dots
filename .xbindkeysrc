@@ -28,11 +28,11 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-"pactl set-sink-mute 0 toggle"
+"pactl set-sink-mute 0 toggle && pkill -RTMIN+10 dwmblocks"
 	XF86AudioMute
-"pactl set-sink-volume 0 -10%"
+"pactl set-sink-volume 0 -10% && pkill -RTMIN+10 dwmblocks"
 	XF86AudioLowerVolume
-"pactl set-sink-volume 0 +10%"
+"pactl set-sink-volume 0 +10% && pkill -RTMIN+10 dwmblocks"
 	XF86AudioRaiseVolume
 
 "xbacklight -dec 10"
@@ -46,6 +46,11 @@
 	Shift+Alt + x
 "systemctl reboot"
 	Control+Alt + x
+
+"xinput disable Synaptics\ TM3075-002"
+	Shift+Alt + v
+"xinput enable Synaptics\ TM3075-002"
+	Alt + v
 
 "exec brave"
 	Alt + c

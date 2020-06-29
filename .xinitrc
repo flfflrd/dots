@@ -35,7 +35,6 @@ fi
 # User specific environment setup
 
 # maybe this would be better in .profile or something
-xinput disable Synaptics\ TM3075-002
 xbindkeys
 feh --bg-scale ~/pix/backgrounds/bg.png
 #unclutter

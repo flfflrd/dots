@@ -41,6 +41,9 @@ nnoremap <leader>c :bd<cr>
 "close current buffer
 nnoremap <leader>t :%s/\s\+$//e<cr>
 "remove trailing whitespace
+vnoremap <C-c> "*y :let @+=@*<cr>
+vnoremap <C-p> "+P
+"easy copy and paste hotkeys
 noremap <Up> <C-y>
 noremap <Down> <C-e>
 noremap <Left> :bp<cr>
@@ -50,3 +53,7 @@ noremap <Right> :bn<cr>
 " ABBREVS
 autocmd FileType java iabbrev sop System.out.print
 autocmd FileType java iabbrev msa main(String[] args)
+
+" COMMENTORS
+autocmd FileType cpp nnoremap <leader>l 0i/*<esc>A*/<esc>
+autocmd FileType c nnoremap <leader>l 0i//<esc>
