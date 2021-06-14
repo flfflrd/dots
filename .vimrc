@@ -18,6 +18,7 @@ set viminfo+=n~/.vim/viminfo
 colorscheme gruvbox
 let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled = 1
+hi Normal guibg=NONE ctermbg=NONE
 
 " PLUGINS
 filetype off

@@ -70,4 +70,8 @@ alias cozsh="vim ~/dots/.zshrc"
 alias covim="vim ~/dots/.vimrc"
 alias coxin="vim ~/dots/.xinitrc" # lol coxin
 
+function c {
+    builtin cd "$@" && ls -Al --group-directories-first
+}
+
 cd ~
