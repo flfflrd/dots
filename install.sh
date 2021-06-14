@@ -12,7 +12,9 @@ mkdir ~/bin 2>/dev/null
 [ ! -f ~/bin/pfetch ] && exec curl https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch > ~/bin/pfetch
 chmod +x ~/bin/pfetch
 
-exec ln -sf ~/dots/.zshrc
-exec ln -sf ~/dots/.vimrc
 [ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+exec ln -sf ~/dots/.zshrc
+exec ln -sf ~/dots/.vimrc
+
+exec git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
