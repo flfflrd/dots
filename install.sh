@@ -10,6 +10,7 @@ cd ~
 
 mkdir ~/bin 2>/dev/null
 [ ! -f ~/bin/pfetch ] && exec curl https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch > ~/bin/pfetch
+chmod +x ~/bin/pfetch
 
 exec ln -sf ~/dots/.zshrc
 exec ln -sf ~/dots/.vimrc
