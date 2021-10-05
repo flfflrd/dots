@@ -6,7 +6,7 @@
 #
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tristan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load
 ZSH_THEME="bira"
@@ -33,6 +33,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 ### USER CONFIG ###
+
+bindkey -v
 
 # clean up home dir
 compinit -d $ZSH/.zcompdump
@@ -62,16 +64,19 @@ alias uni="cd ~/uni"
 alias gs="git status"
 alias gaa="git add ."
 
-alias l="ls -Al --group-directories-first"
-alias locate="sudo find / -type f -iname"
+alias l="ls -AlXh --group-directories-first"
+alias L="ls -AlhS"
+alias D="du -ahS"
+alias locate="sudo find / 2>/dev/null | grep "
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
+alias sozsh="source ~/.zshrc"
 alias cozsh="vim ~/dots/.zshrc"
 alias covim="vim ~/dots/.vimrc"
 alias coxin="vim ~/dots/.xinitrc" # lol coxin
 
 function c {
-    builtin cd "$@" && ls -Al --group-directories-first
+    builtin cd "$@" && l
 }
 
-cd ~
+c
