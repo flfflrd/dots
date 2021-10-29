@@ -66,4 +66,4 @@ autocmd FileType cpp nnoremap <leader>l 0i/*<esc>A*/<esc>
 autocmd FileType c nnoremap <leader>l 0i//<esc>
 
 " SYNTAXING
-autocmd FileType php set ft=html syn=php
+autocmd FileType php set ft=phtml syn=php autoindent
