@@ -45,5 +45,7 @@ alias ga="git add"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-~/bin/springClean
-
+rm -f ~/.wget-hsts
+rm -f ~/.zcompdump*
+rm -f ~/.sudo_as_admin_successful
+rm -f ~/.lesshst
