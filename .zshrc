@@ -47,3 +47,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ~/bin/springClean
 
+if [ $(tput cols) -lt 70 ]; then
+	alias l="ls -A --group-directories-first"
+	echo small
+fi
