@@ -49,3 +49,8 @@ rm -f ~/.wget-hsts
 rm -f ~/.zcompdump*
 rm -f ~/.sudo_as_admin_successful
 rm -f ~/.lesshst
+
+if [ $(tput cols) -lt 70 ]; then
+	alias l="ls -A --group-directories-first"
+	echo small
+fi
