@@ -18,7 +18,7 @@ set colorcolumn=80
 set number relativenumber
 set smartindent
 set mouse=n
-
+set nowrap
 
 let mapleader=","
 

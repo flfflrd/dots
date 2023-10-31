@@ -1,3 +1,4 @@
+#!/bin/bash
 #              _        _ _       _
 # (_)_ __  ___| |_ __ _| | |  ___| |__
 # | | '_ \/ __| __/ _` | | | / __| '_ \
@@ -6,8 +7,19 @@
 #
 # Tristan Fulford's ezpz environment installer
 
-sudo apt install zsh
-echo zsh installed
+case $OSTYPE in
+	"darwin"*)
+		echo darwin
+		# zsh already installed on macos
+		;;
+	"linux"*)
+		echo linux
+		sudo apt install zsh
+		;;
+	*)
+		echo other
+		;;
+esac
 
 [ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo oh-my-zsh installed
@@ -16,7 +28,7 @@ echo oh-my-zsh installed
 echo vundle installed
 
 [ ! -d ~/.vim/colors ] && mkdir ~/.vim/colors
-curl https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim > gruvbox.vim
+curl https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim > ~/.vim/colors/gruvbox.vim
 echo gruvbox for vim installed
 
 cp ~/.zshrc ~/.zshrc.pre-install
