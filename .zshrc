@@ -43,6 +43,9 @@ alias untar="tar -xzvf"
 alias gs="git status"
 alias ga="git add"
 
+alias cwww="cd /var/www/html"
+alias szsh="source ~/.zshrc"
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 rm -f ~/.wget-hsts

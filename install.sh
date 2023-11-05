@@ -33,8 +33,10 @@ echo gruvbox for vim installed
 
 cp ~/.zshrc ~/.zshrc.pre-install
 cp ~/.vimrc ~/.vimrc.pre-install
+cp ~/.tmux.conf ~/.tmux.conf.pre-install
 ln -sf ~/dots/.zshrc ~
 ln -sf ~/dots/.vimrc ~
+ln -sf ~/dots/.tmux.conf ~
 echo symlinks for zsh and vim rc\'s created
 
 # Missing conditionals and modularity.
