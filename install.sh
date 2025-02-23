@@ -5,7 +5,7 @@
 # | | | | \__ \ || (_| | | |_\__ \ | | |
 # |_|_| |_|___/\__\__,_|_|_(_)___/_| |_|
 #
-# Tristan Fulford's ezpz environment installer
+# Tristan Fulford's auto environment installer
 
 case $OSTYPE in
 	"darwin"*)
@@ -21,22 +21,28 @@ case $OSTYPE in
 		;;
 esac
 
-[ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh ] 
+then
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 echo oh-my-zsh installed
 
-[ ! -d ~/.vim/bundle/Vundle.vim ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]
+then
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 echo vundle installed
 
 [ ! -d ~/.vim/colors ] && mkdir ~/.vim/colors
 curl https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim > ~/.vim/colors/gruvbox.vim
 echo gruvbox for vim installed
 
-cp ~/.zshrc ~/.zshrc.pre-install
-cp ~/.vimrc ~/.vimrc.pre-install
-cp ~/.tmux.conf ~/.tmux.conf.pre-install
+cp -n ~/.zshrc ~/.zshrc.pre-install
+cp -n ~/.vimrc ~/.vimrc.pre-install
+cp -n ~/.tmux.conf ~/.tmux.conf.pre-install
 ln -sf ~/dots/.zshrc ~
 ln -sf ~/dots/.vimrc ~
 ln -sf ~/dots/.tmux.conf ~
-echo symlinks for zsh and vim rc\'s created
+echo symlinks for zsh, vim, and tmux config\'s created
 
 # Missing conditionals and modularity.
