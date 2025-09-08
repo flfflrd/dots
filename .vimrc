@@ -19,6 +19,7 @@ set number relativenumber
 set smartindent
 set mouse=n
 set nowrap
+syntax on
 
 let mapleader=","
 
@@ -26,6 +27,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>c :bd<cr>
 nnoremap <leader>t :%s/\s\+$//e<cr>
+nnoremap <leader>i gg=G
 
 noremap <Up> <C-y>
 noremap <Down> <C-e>
@@ -41,7 +43,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'beanworks/vim-phpfmt'
 call vundle#end()
 filetype plugin indent on
 
-autocmd FileType php set ft=html
+autocmd FileType php set ft=php
+autocmd FileType php set syntax=phtml
