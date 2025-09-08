@@ -30,16 +30,18 @@ alias c="cd"
 alias untar="tar -xzvf"
 alias gs="git status"
 alias ga="git add"
+alias py="/usr/bin/python3"
 
 alias cwww="cd /var/www/html"
 alias szsh="source ~/.zshrc"
-alias ezsh="vim ~/.zshrc"
+alias vzsh="vim ~/.zshrc"
 
 alias nmap1="nmap -T4 -A -v"
 
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/System/Volumes/Data/Users/tristanfulford/go/bin
 
 rm -f ~/.wget-hsts
 rm -f ~/.zcompdump*
@@ -47,9 +49,14 @@ rm -f ~/.sudo_as_admin_successful
 rm -f ~/.lesshst
 
 # environment specifics, like termux on smartphone
-[ $OSTYPE = darwin ] && alias l="ls -Al"
+if [[ $OSTYPE == "darwin"* ]]
+then
+	alias l="gls -ALGXlh --color --group-directories-first"
+	echo darwin
+fi
+
 if [ $(tput cols) -lt 70 ]; then
-	alias l="ls -A --group-directories-first"
+	alias l="gls -A --color --group-directories-first"
 	echo small screen
 fi
 
