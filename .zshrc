@@ -6,8 +6,7 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 export HISTFILE=$ZSH/.zhistfile
-
-[[ $OSTYPE == "linux"* ]] && compinit -d $ZSH/.zcompdump
+source ~/.profile
 
 ZSH_THEME="bira"			# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 zstyle ':omz:update' mode auto		# update automatically without asking
@@ -38,10 +37,15 @@ alias vzsh="vim ~/.zshrc"
 
 alias nmap1="nmap -T4 -A -v"
 
+alias shodan="chafa --stretch shodan.gif -w 3 --threads 1 -O 0 -c 16"
+
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/System/Volumes/Data/Users/tristanfulford/go/bin
+
+export LANG=en_AU.UTF-8
+export LC_ALL=en_AU.UTF-8
 
 rm -f ~/.wget-hsts
 rm -f ~/.zcompdump*
@@ -59,4 +63,14 @@ if [ $(tput cols) -lt 70 ]; then
 	alias l="gls -A --color --group-directories-first"
 	echo small screen
 fi
+
+autoload -U colors && colors
+setopt promptsubst
+
+# Idle timeout in seconds (300 = 5 minutes)
+#TMOUT=600
+# What to do on timeout
+#trap 'reset; cmatrix -s; ls -Al;' SIGALRM
+
+[[ $OSTYPE == "linux"* ]] && compinit -d $ZSH/.zcompdump
 
